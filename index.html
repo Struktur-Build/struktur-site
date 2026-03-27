@@ -87,20 +87,30 @@
     }
 
     .header-inner {
-      min-height: var(--header-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.25));
+  transition: transform 200ms ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
 
     .brand-mark {
       width: 2.4rem;
@@ -129,10 +139,8 @@
     }
 
     .nav {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
+  display: none;
+}
 
     .nav-links {
       display: flex;
@@ -681,8 +689,8 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-    <a class="brand" href="#top" aria-label="Struktur Build Company home">
-  <img src="logo_rectangular.png" alt="Struktur Build Company logo" class="logo">
+      <a class="brand" href="#top" aria-label="Struktur Build Company home">
+  <img src="logo_transparent_yellow.svg" alt="Struktur Build Company logo" class="logo">
 </a>
 
       <nav class="nav" aria-label="Primary navigation">
@@ -927,11 +935,11 @@
               </a>
               <a class="contact-link" href="tel:+18050000000">
                 <span>Call</span>
-                <strong>(425) 344-7423</strong>
+                <strong>(805) 000-0000</strong>
               </a>
               <a class="contact-link" href="#">
                 <span>Instagram</span>
-                <strong>@struktur_build</strong>
+                <strong>@strukturbuild</strong>
               </a>
               <a class="contact-link" href="#">
                 <span>YouTube</span>
@@ -984,4 +992,3 @@
   </script>
 </body>
 </html>
-
