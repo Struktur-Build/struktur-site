@@ -409,58 +409,84 @@
       font-size: 0.95rem;
     }
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr 0.9fr;
-      grid-template-rows: 260px 260px;
-      gap: 1rem;
-    }
+ .portfolio-slider {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(29,29,27,0.08);
+  background: #12110f;
+}
 
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      min-height: 220px;
-      box-shadow: var(--shadow);
-      background-color: #ddd3c5;
-      border: 1px solid rgba(29,29,27,0.08);
-    }
+.portfolio-slide {
+  position: relative;
+  min-height: 620px;
+}
 
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 500ms ease;
-    }
+.portfolio-slide img {
+  width: 100%;
+  height: 620px;
+  object-fit: cover;
+  display: block;
+}
 
-    .portfolio-item:hover img {
-      transform: scale(1.04);
-    }
+.portfolio-caption {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.38);
+  border: 1px solid rgba(246,200,69,0.18);
+  color: white;
+  backdrop-filter: blur(10px);
+  max-width: 560px;
+}
 
-    .portfolio-item.large {
-      grid-row: 1 / span 2;
-    }
+.portfolio-caption strong {
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+  color: #f6c845;
+}
 
-    .portfolio-caption {
-      position: absolute;
-      inset: auto 1rem 1rem 1rem;
-      padding: 0.9rem 1rem;
-      border-radius: 16px;
-      background: rgba(15,15,14,0.5);
-      color: white;
-      backdrop-filter: blur(10px);
-    }
+.portfolio-caption span {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.84);
+}
 
-    .portfolio-caption strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 0.15rem;
-    }
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(246,200,69,0.22);
+  background: rgba(0,0,0,0.45);
+  color: #f6c845;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
 
-    .portfolio-caption span {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.84);
-    }
+.slider-button:hover {
+  transform: translateY(-50%) scale(1.03);
+  background: rgba(0,0,0,0.6);
+  border-color: rgba(246,200,69,0.4);
+}
+
+.slider-button-prev {
+  left: 1rem;
+}
+
+.slider-button-next {
+  right: 1rem;
+}
 
     .split-panel {
       display: grid;
@@ -635,15 +661,18 @@
       .hero-grid,
       .section-head,
       .services-grid,
-      .portfolio-grid,
       .split-panel,
       .cta-shell,
       .card-grid {
         grid-template-columns: 1fr;
       }
 
-      .portfolio-grid {
-        grid-template-rows: repeat(4, 260px);
+      .portfolio-slide {
+      min-height: 460px;
+      }
+
+      .portfolio-slide img {
+      height: 460px;
       }
 
       .portfolio-item.large {
@@ -664,7 +693,26 @@
       :root {
         --header-h: 72px;
       }
+      .portfolio-slide {
+      min-height: 340px;
+      }
 
+      .portfolio-slide img {
+      height: 340px;
+      }
+
+      .portfolio-caption {
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: 0.85rem;
+        padding: 0.85rem 0.95rem;
+      }
+
+      .slider-button {
+        width: 46px;
+        height: 46px;
+        font-size: 1.5rem;
+      }
       .header-inner {
         min-height: 82px;
         grid-template-columns: 1fr auto;
@@ -892,7 +940,7 @@
             </figcaption>
           </figure>
           <figure class="portfolio-item reveal">
-            <img src="bedroom" />
+            <img src="bedroom.jpg" />
             <figcaption class="portfolio-caption">
               <strong>Quiet Design Language</strong>
               <span>Simple, calm, intentional rooms.</span>
@@ -1018,7 +1066,39 @@
         });
       });
     }
+    const slides = [
+  {
+    image: "adu_machine.jpg",
+    title: "SLOasis",
+    caption: "Modern finish details and efficient layout thinking."
+  },
+  {
+    image: "tile.jpg",
+    title: "Clean Interior Finish",
+    caption: "Warm materials, restrained palette, functional space."
+  },
+  {
+    image: "kitchen.jpg",
+    title: "Compact Living",
+    caption: "Efficient spaces that still feel elevated."
+  },
+  {
+    image: "bedroom.jpg",
+    title: "Quiet Design Language",
+    caption: "Simple, calm, intentional rooms."
+  }
+];
 
+let currentSlide = 0;
+
+function changeSlide(direction) {
+  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+  document.getElementById("sliderImage").src = slides[currentSlide].image;
+  document.getElementById("sliderImage").alt = slides[currentSlide].title;
+  document.getElementById("sliderTitle").textContent = slides[currentSlide].title;
+  document.getElementById("sliderCaption").textContent = slides[currentSlide].caption;
+}
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const observer = new IntersectionObserver((entries) => {
