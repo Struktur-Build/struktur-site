@@ -270,32 +270,35 @@
     }
 
     .hero-card {
-  position: relative;
-  min-height: 560px;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  background:
-    linear-gradient(180deg, rgba(15,15,14,0.06), rgba(15,15,14,0.3)),
-    url('adu_evening.jpg');
-      
-    
-    background-size: 110%;
-    background-position: center 30%;
-    background-repeat: no-repeat;
-}
+      position: relative;
+      min-height: 560px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(15,15,14,0.06), rgba(15,15,14,0.3)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    }
 
     .hero-card-overlay {
       position: absolute;
       inset: auto 1.2rem 1.2rem 1.2rem;
-      background: rgba(255,250,242,0.86);
-      border: 1px solid rgba(255,255,255,0.5);
-      backdrop-filter: blur(14px);
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(246,200,69,0.18);
+      backdrop-filter: blur(10px);
       border-radius: 20px;
       padding: 1.2rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+    }
+
+    .hero-card-overlay .stat strong {
+      color: #f6c845;
+    }
+
+    .hero-card-overlay .stat span {
+      color: rgba(255,255,255,0.8);
     }
 
     .stat {
@@ -768,7 +771,7 @@
             </div>
             <div class="stat">
               <strong>From numbers to nails</strong>
-              <span>Providing financial perspective and getting the job done.</span>
+              <span>Construction guidance paired with financial perspective.</span>
             </div>
           </div>
         </div>
