@@ -913,41 +913,23 @@
             <h2>Projects that feel clean, modern, and real.</h2>
           </div>
           <p>
-            This section should eventually use your own project photography. For now, these are placeholders so the layout feels finished while we build the site out.
+            A few moments from recent work — clean finishes, thoughtful materials, and ADU spaces designed to feel calm, efficient, and elevated.
           </p>
         </div>
 
-        <div class="portfolio-grid">
-          <figure class="portfolio-item large reveal">
-            <img src="adu_machine.jpg" />
-            <figcaption class="portfolio-caption">
-              <strong>SLOasis</strong>
-              <span>Modern finish details and efficient layout thinking.</span>
-            </figcaption>
-          </figure>
-          <figure class="portfolio-item reveal">
-            <img src="tile.jpg" />
-            <figcaption class="portfolio-caption">
-              <strong>Clean Interior Finish</strong>
-              <span>Warm materials, restrained palette, functional space.</span>
-            </figcaption>
-          </figure>
-          <figure class="portfolio-item reveal">
-            <img src="kitchen.jpg" />
-            <figcaption class="portfolio-caption">
-              <strong>Compact Living</strong>
-              <span>Efficient spaces that still feel elevated.</span>
-            </figcaption>
-          </figure>
-          <figure class="portfolio-item reveal">
-            <img src="bedroom.jpg" />
-            <figcaption class="portfolio-caption">
-              <strong>Quiet Design Language</strong>
-              <span>Simple, calm, intentional rooms.</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
+        <div class="portfolio-slider reveal">
+          <button class="slider-button slider-button-prev" onclick="changeSlide(-1)" aria-label="Previous project">‹</button>
+
+        <figure class="portfolio-slide">
+          <img id="sliderImage" src="adu_machine.jpg" alt="SLOasis">
+          <figcaption class="portfolio-caption">
+            <strong id="sliderTitle">SLOasis</strong>
+            <span id="sliderCaption">Modern finish details and efficient layout thinking.</span>
+    </figcaption>
+  </figure>
+
+  <button class="slider-button slider-button-next" onclick="changeSlide(1)" aria-label="Next project">›</button>
+</div>
     </section>
 
     <section id="process">
@@ -1066,7 +1048,7 @@
         });
       });
     }
-    const slides = [
+  const slides = [
   {
     image: "adu_machine.jpg",
     title: "SLOasis",
@@ -1090,15 +1072,37 @@
 ];
 
 let currentSlide = 0;
+let slideTimer;
+
+function renderSlide() {
+  const imageEl = document.getElementById("sliderImage");
+  const titleEl = document.getElementById("sliderTitle");
+  const captionEl = document.getElementById("sliderCaption");
+
+  if (!imageEl || !titleEl || !captionEl) return;
+
+  imageEl.src = slides[currentSlide].image;
+  imageEl.alt = slides[currentSlide].title;
+  titleEl.textContent = slides[currentSlide].title;
+  captionEl.textContent = slides[currentSlide].caption;
+}
+
+function restartSlideTimer() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    renderSlide();
+  }, 3000);
+}
 
 function changeSlide(direction) {
   currentSlide = (currentSlide + direction + slides.length) % slides.length;
-
-  document.getElementById("sliderImage").src = slides[currentSlide].image;
-  document.getElementById("sliderImage").alt = slides[currentSlide].title;
-  document.getElementById("sliderTitle").textContent = slides[currentSlide].title;
-  document.getElementById("sliderCaption").textContent = slides[currentSlide].caption;
+  renderSlide();
+  restartSlideTimer();
 }
+
+renderSlide();
+restartSlideTimer();
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const observer = new IntersectionObserver((entries) => {
