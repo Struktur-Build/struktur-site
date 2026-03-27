@@ -61,12 +61,12 @@
       padding: 0.48rem 0.82rem;
       border: 1px solid rgba(246, 200, 69, 0.25);
       border-radius: 999px;
-      background: rgba(0,0,0,0.45);
+      background: rgba(24,24,24,0.9);
       color: var(--struktur-yellow);
       font-size: 0.82rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
 
     .eyebrow::before {
@@ -246,23 +246,26 @@
 
     .hero-card-overlay {
       position: absolute;
-      inset: auto 1.2rem 1.2rem 1.2rem;
-      background: rgba(0,0,0,0.35);
+      inset: auto 0.8rem 0.8rem 0.8rem;
+      background: rgba(0,0,0,0.20);
       border: 1px solid rgba(246,200,69,0.18);
       backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 1.2rem;
+      border-radius: 14px;
+      padding: 0.7rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
     }
 
     .hero-card-overlay .stat strong {
       color: var(--struktur-yellow);
+      font-size: 1rem;
     }
 
     .hero-card-overlay .stat span {
       color: rgba(255,255,255,0.8);
+      font-size: 0.78rem;
+      line-height: 1.3;
     }
 
     .stat {
