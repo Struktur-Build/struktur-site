@@ -107,3 +107,885 @@
       height: 2.4rem;
       border-radius: 0.8rem;
       background: linear-gradient(145deg, var(--accent), #b28a42);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(138, 106, 47, 0.28);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-copy small {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .menu-button {
+      display: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.6);
+      color: var(--text);
+      border-radius: 12px;
+      padding: 0.7rem 0.8rem;
+      cursor: pointer;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 48px;
+      padding: 0.9rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.97rem;
+      letter-spacing: 0.01em;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: #fff;
+      box-shadow: 0 14px 32px rgba(29, 29, 27, 0.16);
+    }
+
+    .button-primary:hover {
+      background: #11110f;
+      box-shadow: 0 18px 36px rgba(29, 29, 27, 0.2);
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.58);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255,255,255,0.82);
+      border-color: rgba(29,29,27,0.18);
+    }
+
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.3rem;
+      padding: 2rem 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5.3rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 0.4rem;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(15,15,14,0.06), rgba(15,15,14,0.3)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    }
+
+    .hero-card-overlay {
+      position: absolute;
+      inset: auto 1.2rem 1.2rem 1.2rem;
+      background: rgba(255,250,242,0.86);
+      border: 1px solid rgba(255,255,255,0.5);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      padding: 1.2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat {
+      padding: 0.6rem 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-head h2 {
+      margin: 0.85rem 0 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      margin: 2rem 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 60ch;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: rgba(255, 250, 242, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: 0 10px 28px rgba(29,29,27,0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 0.65rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, rgba(255,250,242,0.92), rgba(248,243,235,0.92));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 1.35rem;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 26px rgba(29,29,27,0.05);
+    }
+
+    .service-number {
+      font-size: 0.82rem;
+      color: var(--accent-dark);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .service-card h3 {
+      margin: 0.8rem 0 0.55rem;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.9fr;
+      grid-template-rows: 260px 260px;
+      gap: 1rem;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 220px;
+      box-shadow: var(--shadow);
+      background-color: #ddd3c5;
+      border: 1px solid rgba(29,29,27,0.08);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .portfolio-item.large {
+      grid-row: 1 / span 2;
+    }
+
+    .portfolio-caption {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(15,15,14,0.5);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .portfolio-caption strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .portfolio-caption span {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.84);
+    }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: rgba(255,250,242,0.78);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 26px rgba(29,29,27,0.04);
+    }
+
+    .panel h3 {
+      margin: 0 0 0.9rem;
+      font-size: 1.3rem;
+      letter-spacing: -0.025em;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.9rem;
+      align-items: start;
+      padding-top: 0.1rem;
+    }
+
+    .process-step strong {
+      width: 2rem;
+      height: 2rem;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--surface-2);
+      font-size: 0.9rem;
+    }
+
+    .process-step h4 {
+      margin: 0 0 0.18rem;
+      font-size: 1rem;
+    }
+
+    .process-step p,
+    .panel p,
+    .panel li {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: start;
+      gap: 0.65rem;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      font-weight: 700;
+      color: var(--accent-dark);
+      transform: translateY(1px);
+    }
+
+    .cta {
+      padding: 2rem 0 4rem;
+    }
+
+    .cta-shell {
+      background: linear-gradient(135deg, #181816 0%, #28251f 100%);
+      color: white;
+      border-radius: 30px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      align-items: center;
+      box-shadow: 0 20px 50px rgba(29,29,27,0.16);
+    }
+
+    .cta-shell h2 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+      max-width: 10ch;
+    }
+
+    .cta-shell p {
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+      max-width: 54ch;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.9);
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-1px);
+    }
+
+    .site-footer {
+      padding: 1rem 0 2rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .section-head,
+      .services-grid,
+      .portfolio-grid,
+      .split-panel,
+      .cta-shell,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-rows: repeat(4, 260px);
+      }
+
+      .portfolio-item.large {
+        grid-row: auto;
+      }
+
+      .hero-card {
+        min-height: 460px;
+      }
+
+      .hero-card-overlay,
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-h: 72px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 1rem;
+        right: 1rem;
+        background: rgba(255,250,242,0.98);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-button {
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      h1 {
+        max-width: 12ch;
+      }
+
+      .hero-card-overlay,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-shell {
+        padding: 1.4rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Struktur Build Company home">
+        <div class="brand-mark">S</div>
+        <div class="brand-copy">
+          <span>Struktur Build Company</span>
+          <small>San Luis Obispo, California</small>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navLinks">Menu</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="button button-primary" href="#contact">Start Your ADU</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal visible">
+          <span class="eyebrow">Clean. Intentional. Buildable.</span>
+          <h1>Modern ADUs built with clarity.</h1>
+          <p>
+            Struktur Build Company helps homeowners move from early feasibility and financial clarity
+            through construction and completion. From numbers to nails, the goal is simple: build clean,
+            intentional ADUs that make sense.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Get a Feasibility Review</a>
+            <a class="button button-secondary" href="#work">See Our Work</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="hero-card-overlay">
+            <div class="stat">
+              <strong>ADU-first</strong>
+              <span>Focused on clean, high-value accessory dwelling units.</span>
+            </div>
+            <div class="stat">
+              <strong>From numbers to nails</strong>
+              <span>Construction guidance paired with financial perspective.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">About Struktur</span>
+            <h2>Built for homeowners who want clarity, not chaos.</h2>
+          </div>
+          <p>
+            Struktur is for clients who care about design, quality, and making good financial decisions.
+            The approach is straightforward: clean communication, strong execution, and modern ADUs that feel considered from the beginning.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card reveal">
+            <h3>Intentional design</h3>
+            <p>Simple forms, smart layouts, and a finished result that feels calm, modern, and highly usable.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Financial clarity</h3>
+            <p>Early conversations can include practical thinking around cost, value, rent potential, and project fit.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Builder-led execution</h3>
+            <p>Real-world construction knowledge, practical sequencing, and an eye for details that matter on site.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Services</span>
+            <h2>From first idea to finished unit.</h2>
+          </div>
+          <p>
+            Whether you are exploring an ADU for rental income, family use, or long-term property value,
+            Struktur is built around the pieces that matter most: feasibility, planning, clean execution, and trust.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div>
+              <span class="service-number">01</span>
+              <h3>ADU Feasibility</h3>
+              <p>Initial conversations around project fit, budget direction, and the big-picture viability of the build.</p>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div>
+              <span class="service-number">02</span>
+              <h3>Design Coordination</h3>
+              <p>Guidance toward efficient layouts, practical decisions, and design choices that support buildability.</p>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div>
+              <span class="service-number">03</span>
+              <h3>Construction</h3>
+              <p>Focused execution with an emphasis on quality, communication, sequencing, and long-term value.</p>
+            </div>
+          </article>
+          <article class="service-card reveal">
+            <div>
+              <span class="service-number">04</span>
+              <h3>ROI Perspective</h3>
+              <p>A builder who can also speak to project economics, not just finishes and fixtures.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="eyebrow">Selected Work</span>
+            <h2>Projects that feel clean, modern, and real.</h2>
+          </div>
+          <p>
+            This section should eventually use your own project photography. For now, these are placeholders so the layout feels finished while we build the site out.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <figure class="portfolio-item large reveal">
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80" alt="Modern residential exterior placeholder" />
+            <figcaption class="portfolio-caption">
+              <strong>Garage Conversion ADU</strong>
+              <span>Modern finish details and efficient layout thinking.</span>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item reveal">
+            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Modern kitchen placeholder" />
+            <figcaption class="portfolio-caption">
+              <strong>Clean Interior Finish</strong>
+              <span>Warm materials, restrained palette, functional space.</span>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item reveal">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Modern small living space placeholder" />
+            <figcaption class="portfolio-caption">
+              <strong>Compact Living</strong>
+              <span>Efficient spaces that still feel elevated.</span>
+            </figcaption>
+          </figure>
+          <figure class="portfolio-item reveal">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Modern bedroom placeholder" />
+            <figcaption class="portfolio-caption">
+              <strong>Quiet Design Language</strong>
+              <span>Simple, calm, intentional rooms.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container split-panel">
+        <article class="panel reveal">
+          <span class="eyebrow">Process</span>
+          <h3>A clearer way to build an ADU</h3>
+          <div class="process-list">
+            <div class="process-step">
+              <strong>1</strong>
+              <div>
+                <h4>Define the opportunity</h4>
+                <p>Start with the property, the goals, and whether the project makes practical sense.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <strong>2</strong>
+              <div>
+                <h4>Shape the plan</h4>
+                <p>Work through scope, budget direction, design priorities, and construction strategy.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <strong>3</strong>
+              <div>
+                <h4>Build with discipline</h4>
+                <p>Execute cleanly with an eye on sequencing, details, and quality that lasts.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <strong>4</strong>
+              <div>
+                <h4>Finish strong</h4>
+                <p>Deliver a space that feels complete, useful, and worth the investment.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel reveal">
+          <span class="eyebrow">Why Struktur</span>
+          <h3>Not just another contractor website.</h3>
+          <p>
+            The goal is to position Struktur as sharp, trustworthy, and modern. That means a site that feels curated,
+            direct, and premium without being flashy or overbuilt.
+          </p>
+          <ul class="check-list">
+            <li>Modern, design-aware aesthetic</li>
+            <li>Clear focus on ADUs rather than generic remodeling</li>
+            <li>Practical financial perspective for homeowner decisions</li>
+            <li>Messaging that feels thoughtful and high-trust</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-shell reveal">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h2>Let’s talk about your ADU.</h2>
+            <p>
+              Ready to explore a project, ask about feasibility, or see whether your property is a fit?
+              Reach out and start the conversation.
+            </p>
+          </div>
+
+          <aside class="contact-card">
+            <h3>Struktur Build Company</h3>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:hello@strukturbuild.com">
+                <span>Email</span>
+                <strong>hello@strukturbuild.com</strong>
+              </a>
+              <a class="contact-link" href="tel:+18050000000">
+                <span>Call</span>
+                <strong>(805) 000-0000</strong>
+              </a>
+              <a class="contact-link" href="#">
+                <span>Instagram</span>
+                <strong>@strukturbuild</strong>
+              </a>
+              <a class="contact-link" href="#">
+                <span>YouTube</span>
+                <strong>Watch the build</strong>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Struktur Build Company. All rights reserved.</span>
+      <span>Built for Cloudflare Pages.</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuButton && navLinks) {
+      menuButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          menuButton.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>
+
